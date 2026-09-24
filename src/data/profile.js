@@ -1,4 +1,5 @@
 // All site content lives here. Edit this file to update the portfolio.
+import { totalExperience } from '../utils/experience.js';
 
 export const profile = {
   name: 'Nidhin Babu',
@@ -30,7 +31,8 @@ export const profile = {
 };
 
 export const stats = [
-  { value: '2019', label: 'Shipping code since' },
+  { key: 'experience', label: 'Experience' }, // computed from the experience periods below
+  { value: '2019', label: 'Coding since' },
   { key: 'projects', value: '', label: 'Projects built' }, // value filled from projects below
   { value: '3', label: 'Countries worked in' },
   { value: '4', label: 'Certifications' },
@@ -321,3 +323,6 @@ export const certifications = [
 
 // Keep the projects stat in sync with the list above
 stats.find((s) => s.key === 'projects').value = String(projects.length);
+
+// Total experience in years + months, e.g. { years: 5, months: 9 }
+stats.find((s) => s.key === 'experience').duration = totalExperience(experience);

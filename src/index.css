@@ -464,22 +464,35 @@ button {
   color: var(--accent);
 }
 
+/* 1px gaps over a border-coloured background draw the dividers at any column count */
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
   margin: 72px 0 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--border);
+  overflow: hidden;
   position: relative;
 }
 .stat {
   display: flex;
   flex-direction: column-reverse;
   padding: 22px 24px;
+  background: var(--surface);
 }
-.stat + .stat {
-  border-left: 1px solid var(--border);
+.stat--highlight {
+  background: linear-gradient(150deg, var(--accent-soft), var(--surface) 70%), var(--surface);
+}
+.stats .stat--highlight dd {
+  color: var(--accent);
+}
+.stat dd small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 3px;
+  color: var(--text-2);
 }
 .stat dd {
   margin: 0;
@@ -996,6 +1009,13 @@ button {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
+  /* Experience card spans the full width, the other four sit in a 2x2 grid */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat--highlight {
+    grid-column: 1 / -1;
+  }
   .project-grid,
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1087,15 +1107,6 @@ button {
   .project-grid,
   .skills-grid {
     grid-template-columns: 1fr;
-  }
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .stat:nth-child(3) {
-    border-left: 0;
-  }
-  .stat:nth-child(n + 3) {
-    border-top: 1px solid var(--border);
   }
   .section-head h2 {
     white-space: normal;

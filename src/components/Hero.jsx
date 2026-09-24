@@ -111,9 +111,23 @@ export default function Hero() {
       <div className="container">
         <dl className="stats reveal">
           {stats.map((s) => (
-            <div key={s.label} className="stat">
+            <div key={s.label} className={`stat ${s.duration ? 'stat--highlight' : ''}`}>
               <dt>{s.label}</dt>
-              <dd>{s.value}</dd>
+              {s.duration ? (
+                <dd>
+                  {s.duration.years}
+                  <small>{s.duration.years === 1 ? 'yr' : 'yrs'}</small>
+                  {s.duration.months > 0 && (
+                    <>
+                      {' '}
+                      {s.duration.months}
+                      <small>{s.duration.months === 1 ? 'mo' : 'mos'}</small>
+                    </>
+                  )}
+                </dd>
+              ) : (
+                <dd>{s.value}</dd>
+              )}
             </div>
           ))}
         </dl>
