@@ -7,6 +7,8 @@ Dubai, United Arab Emirates
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-nidhinbabu44-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/nidhinbabu44/)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/nidhinbabu44/portfolio/deploy.yml?style=for-the-badge&label=deploy)](https://github.com/nidhinbabu44/portfolio/actions)
 
+### 🌐 Live site: **[nidhinbabu44.github.io/portfolio](https://nidhinbabu44.github.io/portfolio/)**
+
 This is my personal portfolio website, built with **React 19** and **Vite** and deployed to **GitHub Pages**. I build full-stack web and mobile apps with React, Node.js, Java and SQL. I also implement LabVantage LIMS, turning laboratory and clinical workflows into software that people actually use.
 
 ![Portfolio hero, dark mode](docs/screenshots/hero-dark.png)
@@ -132,6 +134,7 @@ This is my personal portfolio website, built with **React 19** and **Vite** and 
 
 ## About this site
 
+- **Live:** https://nidhinbabu44.github.io/portfolio/
 - **Stack:** React 19 and Vite 7, with plain CSS. It uses no UI library, and its only dependencies are `react` and `react-dom`.
 - **Features:**
   - Dark and light themes, with your choice remembered.
